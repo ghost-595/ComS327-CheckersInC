@@ -3,5 +3,15 @@ added rankMoves.c which cacluates the best move for the player given a look ahea
 rankMoves.c accpets the following command line switches
 	-d amount of lookahead moves
 	-v flag to print verbose output or not
-	
+
 updated the make file to handle all c files
+
+
+score = redPawns + (2*redKings)) - (blackPawns + (2*blackKings)
+
+-99 is loss
+99 is win
+
+
+example to execute program:
+./rankmoves < input.txt -d 2

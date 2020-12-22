@@ -1,3 +1,7 @@
+File for developers
+
+these are the different methods used in each class and explinations for each method
+
 -info.c
 
 	-void getFileText(char text[], char fileName[])
