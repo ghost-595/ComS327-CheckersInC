@@ -1,0 +1,10 @@
+updated info.c based on grading of part1
+
+added changes.c which handles 
+	-command line switches -e -h and -m
+	-checks if moves from input are valid
+	-moves peices on the board if move is valid
+	-outputs to -e or -h file if supplied
+	-if capture is on and a possible to capture a piece exists but is not taken the move is returned as illegal
+
+updated the make file to handle both c files
