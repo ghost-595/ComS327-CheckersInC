@@ -1,0 +1,9 @@
+added edit.c which uses the information from info and changes to output a gui to the terminal.
+	the terminal outputs:
+		the hot keys the user can use
+		the current state of the board based on the cursor which can be moved by the right and left arrow keys
+		all moves in the input file colored by validity, green is valid, red is invalid and white is unknown.
+
+edit also accounts for if capture is on and highlights the move if a move could take a piece but didn't in red
+
+make file was updated to include edit.c and termbox

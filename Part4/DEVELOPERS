@@ -1,0 +1,52 @@
+-info.c
+
+	-void getFileText(char text[], char fileName[])
+		-reads in all of the file given by fileName and puts into a char array named text
+
+	-void getStdinText(char text[])
+		-reads in all text from Stdin and puts it into a char array names text
+
+	-void textToWords(char text[], char word[], int *position)
+		-breaks the text char array into individual and updates the position pointer to the current position of the word in the text array
+
+	- void textToBoard(char text[], char **board, int *boardKeywordPosition, int *currentLine, int *error, int *redPawns, int *redKings, int *blackPawns, int *blackKings)
+		-puts board pieces from text array into a 2d char array named board which holds the current board position of the game,
+			while reading text in this method chars +,- and | are ignored, this function also updates the current line the
+			text array is on so if there is an error the user can be notified as to which line, if an error while reading
+			is encounted the error variable is set to 1, as pieces are found in the board the amount of pieces represented
+			by their respected variable name is incremented by 1
+
+	-validateText(char text[], cahr **board, char **moves, char *turn)
+		-using the methods above, validateText makes sure the input file contains all necessary values and does not contain unneeded info,
+		if an error is found the user is notified of which line the error is found on
+
+
+
+-changes.c
+
+	-int validateMoves(char *turn, char **board, char *move, int noCapture, int currMove)
+		Validates a move and returns the move number of the invalid move or 999 if all moves are valid.
+		This is done by converting the alphaNumeric coordinates from the char array move which contains a single move from the input file
+		to coordinates used by the 2d board array, and then performs all checks for the move to make sure it is legal,
+		including checking for if a capture is available is noCapture is set to 1.
+		It then either returns 999 if the move is valid or the move number of the invalid move.
+
+	-void performMoves(char** board, char** moves, int movesToPerform)
+		performs the amount of moves given by the movesToPerform variable on to the 2d array board, this method assumes all moves given
+		by the char array moves is valid.
+
+
+
+-edit.c
+
+	-Uses info and changes to validate the input file and get the position of an invalid move, if there is one.
+		It then uses that information to illustrate a moves list, where green is valid, red is invalid and white is unknown,
+		and the inital board to the terminal. moves are then implemnted on to board using the performMoves method on the board
+		updates the terminal graphic to show the update.
+
+	-void outputToHFile(char *hString, char **board, char **moves, int illegalMoveFound, int currMove)
+		if the -h flag is given as a commandLine argument it outputs the output up to the end or the invalid move to the h file
+
+
+	-void outputToEFile(char *eString, int noCapture, int multipuleJumps, char *turn, char **board, char **moves, int currMove, int amountOfMovesInFile)
+		if the -e flag is given as a commandLine argument it outputs the output up to the end or the invalid move to the e file

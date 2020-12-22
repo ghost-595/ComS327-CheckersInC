@@ -1,0 +1,7 @@
+added rankMoves.c which cacluates the best move for the player given a look ahead value or defaults to 0
+
+rankMoves.c accpets the following command line switches
+	-d amount of lookahead moves
+	-v flag to print verbose output or not
+	
+updated the make file to handle all c files

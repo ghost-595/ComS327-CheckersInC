@@ -1,0 +1,34 @@
+-info.c
+
+	-void getFileText(char text[], char fileName[])
+		-reads in all of the file given by fileName and puts into a char array named text
+
+	-void getStdinText(char text[])
+		-reads in all text from Stdin and puts it into a char array names text
+
+	-void textToWords(char text[], char word[], int *position)
+		-breaks the text char array into indvidual and updates the position pointer to the current position of the word in the text array
+
+	- void textToBoard(char text[], char **board, int *boardKeywordPosition, int *currentLine, int *error, int *redPawns, int *redKings, int *blackPawns, int *blackKings)
+		-puts board pieces from text array into a 2d char array named board which holds the current board postion of the game,
+			while reading text in this method chars +,- and | are ignored, this function also updates the current line the
+			text array is on so if there is an error the user can be notifed as to which line, if an error while reading
+			is incounted the error varaible is set to 1, as pieces are found in the board the amount of peices represented
+			by their respected variable name is incremented by 1 
+
+	-validateText(char text[], cahr **board, char **moves, char *turn)
+		-using the methods above, validateText makes sure the input file contains all nessicary values and does not contain unneeded info,
+		if an error is foun the user is notifed of which line the error is found on
+
+
+-changes.c
+	
+	-accepts 3 possible switches from the command line -h -e or/and -m which decide where/if output is sent to and in what format
+		and the amount of moves to be procssed. using info.c to read in the input either as a file or Stdin it then makes sure
+		all moves are valid and implements thouse moves on the 2d array board supplied by info.c. 
+
+-rankMoves.c
+	-given current board state determines the best move with a certain look ahead given by command line argument -d. This is done by finding all peices on the board corresponding
+		to the current turn and all possible moves from thouse pieces and aranges them in alphabetic order. This is done in the findAvailbleMoves function. 
+		Then using the recursive function findAllAvalibleMoves it gets a deep copy of the board and compares every possible move to the certain lookahead value to calculate 
+		the best possible move for the player. 
