@@ -1,3 +1,5 @@
+Requires termbox
+
 added edit.c which uses the information from info and changes to output a gui to the terminal.
 	the terminal outputs:
 		the hot keys the user can use
