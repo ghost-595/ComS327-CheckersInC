@@ -1,10 +1,17 @@
 updated info.c based on grading of part1
 
 added changes.c which handles 
-	-command line switches -e -h and -m
+	-command line switches; -e computer readable output, -h human readable output and -m the amount of moves to process
 	-checks if moves from input are valid
-	-moves peices on the board if move is valid
-	-outputs to -e or -h file if supplied
-	-if capture is on and a possible to capture a piece exists but is not taken the move is returned as illegal
+	-moves pieces on the board if move is valid
+	-outputs to -e or -h file (if switch is supplied)
+	-if capture is on and it is possible to capture a piece but it is not captured that move is returned as illegal
 
 updated the make file to handle both c files
+
+the resulting board placement from the amount of moves processed is outputed to the -e or -h file (if supplied)
+
+
+
+example to execute program:
+./changes < input.txt -m 2 -h humanOut.txt
