@@ -30,3 +30,9 @@ these are the different methods used in each class and explinations for each met
 	-accepts 3 possible switches from the command line -h -e or/and -m which decide where/if output is sent to and in what format
 		and the amount of moves to be procssed. using info.c to read in the input either as a file or Stdin it then makes sure
 		all moves are valid and implements thouse moves on the 2d array board supplied by info.c. 
+
+-rankMoves.c
+	-given current board state determines the best move with a certain look ahead given by command line argument -d. This is done by finding all peices on the board corresponding
+		to the current turn and all possible moves from thouse pieces and aranges them in alphabetic order. This is done in the findAvailbleMoves function. 
+		Then using the recursive function findAllAvalibleMoves it gets a deep copy of the board and compares every possible move to the certain lookahead value to calculate 
+		the best possible move for the player. 

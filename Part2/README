@@ -1,17 +1,17 @@
-updated info.c based on grading of part1
+added rankMoves.c which cacluates the best move for the player given a look ahead value or defaults to 0
 
-added changes.c which handles 
-	-command line switches; -e computer readable output, -h human readable output and -m the amount of moves to process
-	-checks if moves from input are valid
-	-moves pieces on the board if move is valid
-	-outputs to -e or -h file (if switch is supplied)
-	-if capture is on and it is possible to capture a piece but it is not captured that move is returned as illegal
+rankMoves.c accpets the following command line switches
+	-d amount of lookahead moves
+	-v flag to print verbose output or not
 
-updated the make file to handle both c files
+updated the make file to handle all c files
 
-the resulting board placement from the amount of moves processed is outputed to the -e or -h file (if supplied)
 
+score = redPawns + (2*redKings)) - (blackPawns + (2*blackKings)
+
+-99 is loss
+99 is win
 
 
 example to execute program:
-./changes < input.txt -m 2 -h humanOut.txt
+./rankmoves < input.txt -d 2
